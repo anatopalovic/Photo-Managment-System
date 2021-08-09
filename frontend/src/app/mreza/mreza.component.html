@@ -1,0 +1,76 @@
+<!-- -------------------------------------------  -->
+<!-- Additional css-files and scripts besides the ones in index file -->
+
+<head>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+
+<div class="container">
+    <div class="px-lg-5">
+
+        <!-- Logout button -->
+        <div class="row">
+            <div class="input-group rounded">
+                <button type="button" class="btn btn-secondary" (click)="logout()">LOGOUT</button>
+            </div>
+        </div>
+
+        <div class="px-lg-5">
+
+            <!-- Title -->
+            <div class="row py-5">
+                <div class="col-lg-12 mx-auto">
+                    <div class="text-white p-5 shadow-sm rounded banner">
+                        <h1 class="display-4">ALL ALBUMS</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Switching between list/grid buttons -->
+            <div class="row">
+                <div class="col-lg-12 my-3">
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button class="btn btn-info" id="list">
+                                List View
+                            </button>
+                            <button class="btn btn-danger" id="grid">
+                                Grid View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="photos" class="row view-group">
+
+            <!-- Iterating thorough currently displayed albums   -->
+            <div *ngFor='let a of currentAlbums' class="item col-xs-4 col-lg-4 "
+                style="display: grid; justify-content: center; ">
+                <div class="thumbnail card">
+                    <div class="img-event"
+                        style="display: grid; justify-content: center; padding-top: 20px; padding-bottom: 20px; ">
+                        <a href="/album-mreza/{{a.id}}">
+                            <img class=" group list-group-image img-fluid " src="{{a.randomPic}}" alt="" />
+                        </a>
+                    </div>
+                    <div class="caption card-body  "><a href="/album-mreza/{{a.id}}" style="color: black;">
+                            <h4 class="group card-title inner list-group-item-heading "
+                                style="display: grid; justify-content: center; ">
+                                {{a.title}}</h4>
+                        </a>
+                        <p class="" style="display: grid; justify-content: center; ">
+                            Album by {{a.owner}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

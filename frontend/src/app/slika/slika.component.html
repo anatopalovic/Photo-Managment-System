@@ -1,0 +1,24 @@
+<!-- ---------------------- -->
+<!-- Bootstrap5 carousel -->
+
+<body>
+
+    <div id="carouselExampleIndicators" class="carousel slide center" data-bs-ride="carousel"
+        style=" max-width: 600px; max-height: 600px;">
+        <div class="carousel-indicators"><button class='btn btn-secundary' (click)='back()'>BACK</button>
+        </div>
+
+        <div class="carousel-inner" *ngIf='photos'>
+            <div class="carousel-item active"> <img src="{{photos[index].url}}" class="d-block w-100">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev" (click)='prev()'> <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselExampleIndicators" data-bs-slide="next" (click)='next()'> <span
+                class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+</body>

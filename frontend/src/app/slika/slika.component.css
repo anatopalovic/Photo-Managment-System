@@ -1,0 +1,12 @@
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #ff00003a;
+    padding: 10px;
+    }
+    
+body{
+    background-color: rgba(238, 130, 238, 0.295);
+}
